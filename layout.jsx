@@ -1,10 +1,47 @@
 import './style.css';
 
 export const metadata = {
-  title: 'LAKA ACCOUNT STORE',
-  description: 'Gaming account catalog',
+  metadataBase: new URL(
+    'https://laka-account-store.vercel.app'
+  ),
+
+  title: 'LAKA ACCOUNT STORE | Free Fire Accounts Sri Lanka',
+
+  description:
+    'Explore Free Fire account listings in Sri Lanka. Browse account levels, ranks, prices and collections at LAKA ACCOUNT STORE.',
+
+  keywords: [
+    'LAKA ACCOUNT STORE',
+    'Free Fire Sri Lanka',
+    'Free Fire Accounts',
+    'LAKA Gaming',
+    'HEXORA'
+  ],
+
+  alternates: {
+    canonical: '/'
+  },
+
+  robots: {
+    index: true,
+    follow: true
+  },
+
+  verification: {
+    google: 'KuZ5QtTkqKhoPtDyCk0IX7WRGC50BFfb8-zYNIvJ-OM'
+  },
+
   other: {
     'google-adsense-account': 'ca-pub-4387730896055342'
+  },
+
+  openGraph: {
+    title: 'LAKA ACCOUNT STORE',
+    description: 'Your Account. Your Legend.',
+    url: 'https://laka-account-store.vercel.app',
+    siteName: 'LAKA ACCOUNT STORE',
+    images: ['/logo.jpeg'],
+    type: 'website'
   }
 };
 
@@ -18,6 +55,7 @@ export default function Layout({ children }) {
           crossOrigin="anonymous"
         ></script>
       </head>
+
       <body>
         <header>
           <a href="/">
@@ -26,7 +64,9 @@ export default function Layout({ children }) {
           </a>
           <a href="/admin">Admin</a>
         </header>
+
         {children}
+
         <footer>
           LAKA ACCOUNT STORE · Developed by HEXORA
         </footer>
