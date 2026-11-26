@@ -1,0 +1,1 @@
+export default {env:{NEXT_PUBLIC_SUPABASE_URL:process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://nlsfczpegzuipnextpgi.supabase.co',NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY:process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || 'sb_publishable_bNBsItQNfJMBnB9I8ObnOQ_aTFazJP9'}};

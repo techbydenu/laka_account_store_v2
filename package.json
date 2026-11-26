@@ -1,0 +1,15 @@
+{
+  "name": "laka-account-store",
+  "private": true,
+  "scripts": {
+    "dev": "node prepare.cjs && next dev",
+    "build": "node prepare.cjs && next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^15.5.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@supabase/supabase-js": "^2.49.0"
+  }
+}
