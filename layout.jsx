@@ -4,9 +4,12 @@ export const metadata = {
   metadataBase: new URL(
     'https://laka-account-store.vercel.app'
   ),
+
   title: 'LAKA ACCOUNT STORE | Free Fire Accounts Sri Lanka',
+
   description:
     'Explore Free Fire account listings in Sri Lanka. Browse account levels, ranks, prices and collections at LAKA ACCOUNT STORE.',
+
   keywords: [
     'LAKA ACCOUNT STORE',
     'Free Fire Sri Lanka',
@@ -14,19 +17,24 @@ export const metadata = {
     'LAKA Gaming',
     'HEXORA'
   ],
+
   alternates: {
     canonical: '/'
   },
+
   robots: {
     index: true,
     follow: true
   },
+
   verification: {
     google: 'KuZ5QtTkqKhoPtDyCk0IX7WRGC50BFfb8-zYNIvJ-OM'
   },
+
   other: {
     'google-adsense-account': 'ca-pub-4387730896055342'
   },
+
   openGraph: {
     title: 'LAKA ACCOUNT STORE',
     description: 'Your Account. Your Legend.',
@@ -43,15 +51,19 @@ const groupLink =
 const admins = [
   {
     name: 'Lakshitha',
-    role: 'Main Admin',
+    role: 'MAIN ADMIN',
     phone: '+94 76 545 1547',
-    whatsapp: '94765451547'
+    whatsapp: '94765451547',
+    photo: '/lakshitha.jpeg',
+    position: '50% 22%'
   },
   {
     name: 'Githma',
-    role: 'Second Admin',
+    role: 'SECOND ADMIN',
     phone: '+94 77 126 1277',
-    whatsapp: '94771261277'
+    whatsapp: '94771261277',
+    photo: '/githma.jpeg',
+    position: '55% 40%'
   }
 ];
 
@@ -78,79 +90,191 @@ export default function Layout({ children }) {
       </head>
 
       <body>
+
+        {/* WEBSITE HEADER */}
+
         <header>
           <a href="/">
             <img src="/logo.jpeg" alt="LAKA" />
             LAKA <span>ACCOUNT STORE</span>
           </a>
+
           <a href="/admin">Admin</a>
         </header>
 
+        {/* WEBSITE CONTENT */}
+
         {children}
 
-        <section style={{
-          maxWidth: '1100px',
-          margin: '40px auto',
-          padding: '24px',
-          textAlign: 'center'
-        }}>
-          <h2 style={{ color: '#00E5FF' }}>
-            CONTACT OUR TEAM
+        {/* ADMIN CONTACT SECTION */}
+
+        <section
+          id="contact"
+          style={{
+            maxWidth: '1100px',
+            margin: '40px auto',
+            padding: '24px',
+            textAlign: 'center'
+          }}
+        >
+
+          <h2 style={{
+            color: '#00E5FF',
+            fontSize: '26px',
+            fontWeight: 800,
+            letterSpacing: '1px'
+          }}>
+            OUR OFFICIAL ADMINS
           </h2>
 
-          <p>Contact our official administrators.</p>
+          <p style={{
+            color: '#94A3B8',
+            marginTop: '8px'
+          }}>
+            Contact our official administrators
+            for inquiries and support.
+          </p>
 
           <div style={{
             display: 'grid',
             gridTemplateColumns:
               'repeat(auto-fit, minmax(min(240px, 100%), 1fr))',
             gap: '20px',
-            margin: '24px 0'
+            margin: '25px 0'
           }}>
-            {admins.map(admin => (
-              <div key={admin.name} style={{
-                background: '#0B172B',
-                border: '1px solid #008CFF',
-                borderRadius: '16px',
-                padding: '25px',
-                color: '#ffffff'
-              }}>
-                <h2>{admin.name}</h2>
 
-                <p style={{ color: '#00E5FF' }}>
+            {admins.map(admin => (
+
+              <div
+                key={admin.name}
+                style={{
+                  background:
+                    'linear-gradient(145deg, #0B172B, #101F35)',
+                  border: '1px solid #008CFF',
+                  borderRadius: '20px',
+                  padding: '25px',
+                  color: '#ffffff',
+                  boxShadow: '0 5px 25px #00000040'
+                }}
+              >
+
+                {/* CIRCULAR PROFILE PHOTO */}
+
+                <img
+                  src={admin.photo}
+                  alt={admin.name}
+                  loading="lazy"
+                  style={{
+                    width: '80px',
+                    height: '80px',
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                    objectPosition: admin.position,
+                    border: '2px solid #00E5FF',
+                    boxShadow: '0 0 15px #00E5FF55',
+                    display: 'block',
+                    margin: '0 auto 15px'
+                  }}
+                />
+
+                {/* ADMIN NAME */}
+
+                <h2 style={{
+                  color: '#ffffff',
+                  fontSize: '23px',
+                  margin: '8px 0'
+                }}>
+                  {admin.name}
+                </h2>
+
+                {/* ADMIN ROLE */}
+
+                <p style={{
+                  color: '#00E5FF',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  letterSpacing: '2px'
+                }}>
                   {admin.role}
                 </p>
 
-                <p>
+                {/* CONTACT NUMBER */}
+
+                <p style={{
+                  margin: '18px 0',
+                  fontSize: '17px'
+                }}>
                   <a
                     href={`tel:+${admin.whatsapp}`}
-                    style={{ color: '#ffffff' }}
+                    style={{
+                      color: '#ffffff',
+                      textDecoration: 'none'
+                    }}
                   >
                     {admin.phone}
                   </a>
                 </p>
 
+                {/* WHATSAPP CONTACT BUTTON */}
+
                 <a
                   href={`https://wa.me/${admin.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={waButton}
+                  style={{
+                    ...waButton,
+                    display: 'block'
+                  }}
                 >
                   Chat on WhatsApp
                 </a>
+
               </div>
+
             ))}
+
           </div>
 
-          <a
-            href={groupLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={waButton}
-          >
-            Join Official WhatsApp Group
-          </a>
+          {/* WHATSAPP GROUP SECTION */}
+
+          <div style={{
+            background: '#0B172B',
+            border: '1px solid #128C4A',
+            borderRadius: '18px',
+            padding: '25px',
+            marginTop: '25px'
+          }}>
+
+            <h2 style={{
+              color: '#25D366',
+              fontSize: '22px'
+            }}>
+              JOIN OUR COMMUNITY
+            </h2>
+
+            <p style={{
+              color: '#94A3B8',
+              margin: '12px 0 20px'
+            }}>
+              Join our official WhatsApp group
+              for the latest account listings,
+              updates and offers.
+            </p>
+
+            <a
+              href={groupLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={waButton}
+            >
+              Join Official WhatsApp Group
+            </a>
+
+          </div>
+
         </section>
+
+        {/* FLOATING WHATSAPP BUTTON */}
 
         <a
           href="https://wa.me/94765451547"
@@ -164,15 +288,19 @@ export default function Layout({ children }) {
             right: '20px',
             zIndex: 999,
             borderRadius: '50px',
-            boxShadow: '0 4px 20px #0005'
+            background: '#128C4A',
+            boxShadow: '0 4px 20px #00000055'
           }}
         >
           WhatsApp
         </a>
 
+        {/* WEBSITE FOOTER */}
+
         <footer>
           LAKA ACCOUNT STORE · Developed by HEXORA
         </footer>
+
       </body>
     </html>
   );
